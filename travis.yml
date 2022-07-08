@@ -1,0 +1,26 @@
+{
+  "os": [
+    "linux"
+  ],
+  "dist": "xenial",
+  "branches": {
+    "only": [
+      "master",
+      "prod"
+    ]
+  },
+  "services": [
+    "docker"
+  ],
+  "env": {
+    "jobs": [
+      {
+        "BRANCH": "$TRAVIS_BRANCH",
+        "TAG": "$TRAVIS_TAG"
+      }
+    ]
+  },
+  "script": [
+    "if [ $TRAVIS_TAG = prod ]; then\necho "prod"\nelse\necho "stage"\nfi\n",
+  ]
+}

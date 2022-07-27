@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - preprod
   - prod
 env:
 - BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG
@@ -9,6 +10,8 @@ script:
   if [ $TRAVIS_TAG = prod ]; then
   echo "1"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG
+  elif [ $TRAVIS_BRANCH = preprod ]; then
+  echo "randomphrase"
   else
   echo "0"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG

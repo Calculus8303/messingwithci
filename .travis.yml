@@ -8,12 +8,12 @@ env:
 script:
 - export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
 - |
-  if [ $AUTHOR_NAME = Build Condition ]; then
-  echo $AUTHOR_NAME " success"
+  if [ $AUTHOR_NAME = "Build Condition" ]; then
+  echo $AUTHOR_NAME "success"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG
   elif [ $TRAVIS_BRANCH = preprod ]; then
-  echo  $AUTHOR_NAME " such a shame, preprod"
+  echo  $AUTHOR_NAME "such a shame, preprod"
   else
-  echo   $AUTHOR_NAME " master"
+  echo   $AUTHOR_NAME "master"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG
   fi

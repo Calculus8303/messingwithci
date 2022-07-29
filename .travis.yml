@@ -6,6 +6,8 @@ branches:
 env:
 - BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG
 script:
+export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
+echo $AUTHOR_NAME
 - |
   if [ $TRAVIS_TAG = prod ]; then
   echo "1"

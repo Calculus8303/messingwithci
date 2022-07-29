@@ -4,7 +4,8 @@ branches:
   - preprod
   - prod
 env:
-- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN")
+- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG
+- AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN")
 before_install:
 - echo $AUTHOR_NAME
 - echo $TRAVIS_COMMIT

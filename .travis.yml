@@ -4,15 +4,15 @@ branches:
   - preprod
   - prod
 env:
-- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG export AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN")
+- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN") COMMITTER_EMAIL=$(git log -1 $TRAVIS_COMMIT --pretty="%cE")
 script:
 - |
-  if [ $AUTHOR_NAME = 1101 ]; then
-  echo $AUTHOR_NAME "success"
-  echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG
+  if [ $COMMITTER_EMAIL = 108925416+Calculus8303@users.noreply.github.com. ]; then
+  echo $COMMITTER_EMAIL "success"
+  echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG $AUTHOR_NAME $COMMITTER_EMAIL
   elif [ $TRAVIS_BRANCH = preprod ]; then
-  echo  $AUTHOR_NAME "such a shame, preprod"
+  echo $COMMITTER_EMAIL "such a shame, preprod"
   else
-  echo   $AUTHOR_NAME "master"
+  echo $COMMITTER_EMAIL "master"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG
   fi

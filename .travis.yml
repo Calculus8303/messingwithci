@@ -4,7 +4,7 @@ branches:
   - preprod
   - prod
 env:
-- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
+- BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG export AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN")
 script:
 - |
   if [ $AUTHOR_NAME = 1101 ]; then

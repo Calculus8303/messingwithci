@@ -7,7 +7,7 @@ env:
 - BRANCH=$TRAVIS_BRANCH MESSAGE=$TRAVIS_COMMIT_MESSAGE TAG=$TRAVIS_TAG AUTHOR_NAME=$(git log -1 $TRAVIS_COMMIT --pretty="%aN") COMMITTER_EMAIL=$(git log -1 $TRAVIS_COMMIT --pretty="%cE")
 script:
 - |
-  if [ $COMMITTER_EMAIL = 108925416+Calculus8303@users.noreply.github.com ]; then
+  if [ $COMMITTER_EMAIL = Calculus8303@ih8.it ]; then
   echo $COMMITTER_EMAIL "success"
   echo $TRAVIS_BRANCH $TRAVIS_COMMIT_MESSAGE $TRAVIS_TAG $AUTHOR_NAME $COMMITTER_EMAIL
   elif [ $TRAVIS_BRANCH = preprod ]; then
